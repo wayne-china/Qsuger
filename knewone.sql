@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50527
  Source Host           : localhost
- Source Database       : f2e
+ Source Database       : knewone
 
  Target Server Type    : MySQL
  Target Server Version : 50527
