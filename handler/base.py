@@ -3,10 +3,12 @@
 
 from tornado.web import RequestHandler
 from db import user,product,film,reply,love
+import lib.session
 
 class BaseHandler(RequestHandler):
     def __init__(self, *argc, **argkw):
          super(BaseHandler, self).__init__(*argc, **argkw)
+         self.session = session.Session(self.application.session_manager, self)
    
     @property
     def db(self):

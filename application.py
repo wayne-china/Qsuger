@@ -18,6 +18,7 @@ import handler.product
 import handler.user
 
 from tornado.options import define, options
+from lib.session import Session, SessionManager
 
 #import daemon
 
@@ -74,6 +75,8 @@ class Application(tornado.web.Application):
         ]
 
         tornado.web.Application.__init__(self, handlers, **settings)
+
+        self.session_manager = SessionManager(settings["cookie_secret"], ["127.0.0.1:11211"], 0)
 
         # Have one global connection to the blog DB across all handlers
         self.db = torndb.Connection(

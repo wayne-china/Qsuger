@@ -11,12 +11,19 @@ import tornado.web
 def do_login(self,user_id):
     user_info = self.user_model.get_user_by_uid(user_id)
     username = user_info["username"]
+    password = user_info["password"]
     try:
+        self.session["username"] = username
+        self.session["password"] = password
+        self.session.save()
         self.set_secure_cookie("username", str(username)) 
     except Exception,e:
         print e
 
 def login_out(self):
+    self.session["usernmae"] = None
+    self.session["password"] = None
+
     self.clear_cookie("username") 
 
 class RegisterHandler(BaseHandler):
