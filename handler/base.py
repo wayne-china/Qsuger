@@ -8,7 +8,7 @@ import lib.session
 class BaseHandler(RequestHandler):
     def __init__(self, *argc, **argkw):
          super(BaseHandler, self).__init__(*argc, **argkw)
-         self.session = session.Session(self.application.session_manager, self)
+         self.session = lib.session.Session(self.application.session_manager, self)
    
     @property
     def db(self):
