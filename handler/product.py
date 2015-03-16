@@ -14,7 +14,7 @@ class IndexHandler(BaseHandler):
     def get(self,template_variables = {}):
         user_info = self.get_current_user()
    #     if not user_info:  return self.render("/login")
-    #    self.product_timeline = self.product_model.get_all_product()
+        self.product_timeline = self.product_model.get_all_product()
     #    template_variables["products"] = product_timeline
         template_variables["username"] = user_info["username"] 
         self.render("index.html",**template_variables)
