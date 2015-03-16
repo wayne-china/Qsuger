@@ -23,6 +23,7 @@ def do_login(self,user_id):
 def login_out(self):
     self.session["usernmae"] = None
     self.session["password"] = None
+    self.session.save()
 
     self.clear_cookie("username") 
 
