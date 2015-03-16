@@ -1,0 +1,43 @@
+<html>
+<body>
+<div>
+<form action="" method="POST" enctype="multipart/form-data">
+  <fieldset>
+            {% raw xsrf_form_html() %}
+                <div>
+                    <legend class="">Share Product</legend>
+                </div>
+                <div>
+                    <!-- name -->
+                    <label for="product_name">Product Name</label>
+                    <div>
+                        <input type="text" name="product_name" placeholder="">
+                    </div>
+                </div>
+                <div>
+                    <!--  -->
+                    <label for="link">Product Link</label>
+                    <div>
+                        <input type="text" name="product_link" placeholder="">
+                    </div>
+                </div>
+                <div>
+                    <!--  -->
+                    <label for="film_name">Film Name</label>
+                    <div>
+                        <input type="text" name="film_name" placeholder="">
+                    </div>
+                </div>
+                <div>
+                    <label for="file">Filename:</label>
+                    <input type="file" name="file" /> 
+                    <br />
+                    <input type="submit" name="submit" value="Submit" />
+                </div>
+    </fieldset>
+</form>
+
+
+</body>
+</html>
+

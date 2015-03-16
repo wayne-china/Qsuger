@@ -1,0 +1,52 @@
+<html>
+<head></head>
+
+<body>
+{% block main %}
+<div>
+<form action='' method="POST">
+  <fieldset>
+            {% raw xsrf_form_html() %}
+                <div>
+                    <legend class="">注册</legend>
+                </div>
+                <div>
+                    <!-- Username -->
+                    <label for="username">用户名</label>
+                    <div>
+                        <input type="text" name="username" placeholder="">
+                        <p>用户名由字母开头，只能含有字母、数字或者下划线</p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <!-- Password-->
+                    <label for="password">密码</label>
+<div class="controls">
+                        <input type="password"  name="password" placeholder="">
+                        <p>密码不少于4个字符</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Password -->
+                    <label for="password_confirm">密码（确认）</label>
+                    <div>
+                        <input type="password"  name="password_confirm" placeholder="" >
+                        <p>请再次输入密码</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Button -->
+                    <div >
+                        <button >注册</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+</div>
+{% end %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head><title>abc</title></head>
+<body>
+<div>
+<center>
+
+<p>welcome {{ username }}</p>
+{% for product in handler.product_timeline %}
+<p> {{ product["product_name"] }} {{ product["share_id"] }} {{ product["share_time"] }} </p>
+<a href = {{ product["link"] }}>link </a>
+{#<img src= "static/{{ final_filename }}">Product image</img>#}
+{% end %}
+</center>
+</div>
+</body>
+</html>
