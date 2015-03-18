@@ -73,7 +73,16 @@ class LoginOutHandler(BaseHandler):
         login_out(self)
         self.redirect("/login")
 
+class PersonHandler(BaseHandler):
+    def get(self,username,template_variables = {}):
+        userinfo = self.user_model.get_user_by_name(username)
 
+        if not userinfo:
+            self.write_error(404)
+            return
+        template_variables["username"] = userinfo["username"]
+        self.render("user/person.html",**template_variables)
+         
         
         
 

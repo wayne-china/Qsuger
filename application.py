@@ -50,7 +50,7 @@ class Application(tornado.web.Application):
  #           (r"/t/edit/(.*)", handler.topic.EditHandler),
  #           (r"/reply/edit/(.*)", handler.topic.ReplyEditHandler),
  #           (r"/node/(.*)", handler.topic.NodeTopicsHandler),
- #           (r"/u/(.*)/topics", handler.topic.UserTopicsHandler),
+            (r"/u/(.*)", handler.user.PersonHandler),
  #           (r"/u/(.*)/replies", handler.topic.UserRepliesHandler),
  #           (r"/u/(.*)/favorites", handler.topic.UserFavoritesHandler),
  #           (r"/u/(.*)", handler.topic.ProfileHandler),
