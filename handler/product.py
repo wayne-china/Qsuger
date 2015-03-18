@@ -36,9 +36,10 @@ class ShareHandler(BaseHandler):
         #image upload
         product_image = self.request.files['file'][0]
         original_fname = product_image['filename']
-        extension = os.path.splitext(original_fname)[1]
-        fname = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(6))
-        final_filename= fname+extension
+      #  extension = os.path.splitext(original_fname)[1]
+      #  fname = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(6))
+      #  final_filename= fname+extension
+        final_filename = original_fname
         output_file = open("static/" + final_filename, 'w')
         output_file.write(product_image['body'])
 
